@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +12,9 @@ import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.com
 import { StudentListComponent } from './component/student-list/student-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { StudentService } from './services/student.service';
+import { SignupComponent } from './auth/signup/signup.component';
+import { LoginComponent } from './auth/login/login.component';
+import { DashboardComponent } from './component/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +22,9 @@ import { StudentService } from './services/student.service';
     HeaderComponent,
     SidenavListComponent,
     StudentListComponent,
+    SignupComponent,
+    LoginComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
@@ -26,6 +33,8 @@ import { StudentService } from './services/student.service';
     MaterialModule,
     FlexLayoutModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [StudentService],
   bootstrap: [AppComponent],
