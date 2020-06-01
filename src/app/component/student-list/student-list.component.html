@@ -15,7 +15,11 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let student of students">
+      <tr
+        class="clickable"
+        *ngFor="let student of students"
+        [routerLink]="['/student-details', student.id]"
+      >
         <td class="align-middle">
           <img src="{{ student.photo }}" height="50" />
         </td>

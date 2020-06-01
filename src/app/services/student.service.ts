@@ -11,10 +11,17 @@ export class StudentService {
   private baseUrl = 'http://localhost:8081/api/students';
   constructor(private httpClient: HttpClient) {}
 
-  getProductList(): Observable<Student[]> {
+  getStudentList(): Observable<Student[]> {
     return this.httpClient
       .get<Student[]>(this.baseUrl)
       .pipe(map((response) => response));
+  }
+
+  getStudent(id: number): Observable<Student> {
+    return this.httpClient.get<Student>(`${this.baseUrl}/${id}`);
+    // return this.httpClient
+    //   .get<Student>(`${this.baseUrl}/${id}`)
+    //   .pipe(map((response) => response));
   }
 }
 

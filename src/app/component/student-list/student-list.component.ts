@@ -21,7 +21,7 @@ export class StudentListComponent implements OnInit {
   }
 
   listStudents() {
-    this.studentService.getProductList().subscribe((data) => {
+    this.studentService.getStudentList().subscribe((data) => {
       this.students = data;
     });
   }

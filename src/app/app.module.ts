@@ -15,6 +15,7 @@ import { StudentService } from './services/student.service';
 import { SignupComponent } from './auth/signup/signup.component';
 import { LoginComponent } from './auth/login/login.component';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
+import { StudentDetailsComponent } from './component/student-list/student-details/student-details.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { DashboardComponent } from './component/dashboard/dashboard.component';
     SignupComponent,
     LoginComponent,
     DashboardComponent,
+    StudentDetailsComponent,
   ],
   imports: [
     BrowserModule,
