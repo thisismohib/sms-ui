@@ -16,6 +16,7 @@ import { SignupComponent } from './auth/signup/signup.component';
 import { LoginComponent } from './auth/login/login.component';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { StudentDetailsComponent } from './component/student-list/student-details/student-details.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { StudentDetailsComponent } from './component/student-list/student-detail
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    NgbModule,
   ],
   providers: [StudentService],
   bootstrap: [AppComponent],
