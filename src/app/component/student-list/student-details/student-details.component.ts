@@ -10,6 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class StudentDetailsComponent implements OnInit {
   student: Student = new Student();
+
   constructor(
     private studentService: StudentService,
     private route: ActivatedRoute
@@ -17,7 +18,10 @@ export class StudentDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     let id = +this.route.snapshot.paramMap.get('id');
+    this.getStudents(id);
+  }
 
+  getStudents(id: number) {
     this.studentService.getStudent(id).subscribe((student) => {
       this.student = student;
       console.log(this.student); // prints when the request completes

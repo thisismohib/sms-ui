@@ -17,6 +17,14 @@ export class StudentService {
       .pipe(map((response) => response));
   }
 
+  getStudentListPaginate(
+    thePage: number,
+    thePageSize: number
+  ): Observable<GetResponse> {
+    const url = `${this.baseUrl}?page=${thePage}&size=${thePageSize}`;
+    return this.httpClient.get<GetResponse>(url);
+  }
+
   getStudent(id: number): Observable<Student> {
     return this.httpClient.get<Student>(`${this.baseUrl}/${id}`);
     // return this.httpClient
@@ -26,7 +34,13 @@ export class StudentService {
 }
 
 interface GetResponse {
-  _embedded: {
+  content: {
     students: Student[];
+  };
+  page: {
+    size: number;
+    totalElements: number;
+    totalPages: number;
+    number: number;
   };
 }
